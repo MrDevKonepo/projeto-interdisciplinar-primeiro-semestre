@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video xbox</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        body{
+            background-color: rgb(32,31,32);
+        }
+        .presentation{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        /*video*/
+        video{
+            width: 920px;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius:50px;
+        }
+
+        /*text informação/animação + botão */
+        .inform{
+            overflow: hidden;
+            position: relative;
+        }
+        .inform::after{
+            content: "";
+            position: absolute;
+            text-align: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-bottom-left-radius: 50px;
+            background-color: rgb(32,31,32);
+            transform: translateX(-100%);
+            animation: removeBlock 5s 4s;
+        }
+        p{
+            height: 220px;
+            color: antiquewhite;
+            font-size: 18px;
+            position: relative;
+            opacity: 0;
+            animation: fade 0s 4s both;
+            border-bottom-left-radius: 50px;
+            padding-top: 50px;
+            text-align: center;
+            background-color: rgb(16,123,16);
+        }
+        @keyframes removeBlock{
+            from{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(100%);
+            }
+        }
+        @keyframes fade{
+            from{opacity: 0;}
+            to{opacity: 1;}
+        }
+
+        button{
+            width: 80px;
+            height: 30px;
+            border-radius: 20px;
+            border-style: none;
+            color: antiquewhite;
+            background-color: rgb(32,31,32);
+            margin-top: 25px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="presentation">
+        <div>
+            <video autoplay>
+                <source src="/production ID_3851147.mp4 " type="video/mp4">
+            </video>
+        </div>
+        <div class="inform">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, similique. Similique illum amet optio quae inventore quibusdam dolorem ipsam vitae vero, in quos totam possimus natus ipsa eveniet deserunt. Dolore?
+                <button>Comprar</button>
+            </p>
+        </div>
+    </section>
+</body>
+</html>
